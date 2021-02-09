@@ -33,6 +33,9 @@
                         <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                         <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else    
+                        @can('post-list')
+                        <li><a class="nav-link" href="{{ route('posts.index') }}">Post</a></li>
+                        @endcan
                         @can('user-list')
                         <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
                         @endcan

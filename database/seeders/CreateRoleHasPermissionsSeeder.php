@@ -15,7 +15,7 @@ class CreateRoleHasPermissionsSeeder extends Seeder
     public function run()
     {
         //insert data in relationship for ADMIN and permissions
-        foreach (range(1, 20) as $i) {
+        foreach (range(1, 24) as $i) {
             DB::insert('insert into role_has_permissions (permission_id , role_id ) values (?, ?)', [$i, 1]);
         }
         //insert data for Editor Role

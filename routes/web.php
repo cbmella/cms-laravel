@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\PostController;
 
 
 use App\Http\Controllers\Auth\LoginController;
@@ -28,6 +29,7 @@ Route::group(['prefix' => 'dashboard'], function () {
         Route::resource('products', ProductController::class);
         Route::resource('templates', TemplateController::class);
         Route::resource('settings', SettingController::class);
+        Route::resource('posts', PostController::class);
         Route::group(['prefix' => 'profile'], function () {
             Route::get('change', [ProfileController::class, 'index'])->name('index');
             Route::post('change', [ProfileController::class, 'changePassword'])->name('changePassword');

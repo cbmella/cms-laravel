@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             PermissionTableSeeder::class,
             CreateRoleHasPermissionsSeeder::class,
             TemplateSeeder::class,
-            CreateBasicTemplate::class
+            CreateBasicTemplate::class,
+            CreateExamplePostSeeder::class
         ]);
     }
 }
