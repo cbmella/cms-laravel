@@ -24,7 +24,7 @@ class PostController extends Controller
         $posts = Post::orderBy('id', 'DESC')->paginate(5);
 
         return view('cruds.posts.index', compact('posts'))
-        ->with('i', ($request->input('page', 1) - 1) * 5);
+            ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -45,9 +45,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        request()->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'excerpt' => 'required',
+        ]);
+
         Post::create($request->all());
 
-        return back()->with('message', 'item stored successfully');
+        return redirect()->route('posts.index')
+            ->with('success', 'Post created successfully.');
     }
 
     /**
@@ -81,9 +88,16 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        request()->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'excerpt' => 'required',
+        ]);
+
         $post->update($request->all());
 
-        return back()->with('message', 'item updated successfully');
+        return redirect()->route('posts.index')
+            ->with('success', 'Post updated successfully');
     }
 
     /**
@@ -96,6 +110,7 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return back()->with('message', 'item deleted successfully');
+        return redirect()->route('posts.index')
+            ->with('success', 'Post deleted successfully');
     }
 }
