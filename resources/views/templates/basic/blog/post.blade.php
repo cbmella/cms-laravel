@@ -5,8 +5,9 @@
         <div class="row">
             <div class="col-12">
                 <div class="jumbotron">
-                    template basico de ejemplo si es que no existe ninguno activo
-                    {{ $template }}
+                    {{ $post->title }}
+                    <hr>
+                    {{ $post->excerpt }}
                 </div>
             </div>
         </div>
