@@ -21,6 +21,7 @@ class HomeController extends Controller
             abort(response('<h1>No hay templates activos</h1>', 401));
         }
         //validar que se configure una pagina inicial
+        //meter toda esta config en un modelo para luego usar solo los metodos y no esta duplicando codigo en cada controlador
     }
 
     public function index()
