@@ -16,7 +16,11 @@ class CreatePagesSeeder extends Seeder
     {
         $pagge = Page::create([
         	'title' => 'Example', 
-        	'content' => '<h1>Example content post</h1>'
+        	'content' => '
+            <h1>Example content post</h1>
+            <br><br>
+            <img src="https://cdn.business2community.com/wp-content/uploads/2013/09/best-press-release-example.jpg">
+            '
         ]);
     }
 }

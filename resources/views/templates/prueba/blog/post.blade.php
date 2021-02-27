@@ -7,7 +7,7 @@
                 <div class="jumbotron">
                     {{ $post->title }}
                     <hr>
-                    {{ $post->excerpt }}
+                    {!! $post->content !!}
                 </div>
             </div>
         </div>
