@@ -12,17 +12,16 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\PageController;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\DashboardController;
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::group(['prefix' => 'blog'], function () {
     Route::get('/', [BlogController::class, 'index'])->name('index');
     Route::get('{id}', [BlogController::class, 'show'])->name('show');
 });
-
 
 Auth::routes();
 
@@ -36,6 +35,7 @@ Route::group(['prefix' => 'dashboard'], function () {
         Route::resource('templates', TemplateController::class);
         Route::resource('settings', SettingController::class);
         Route::resource('posts', PostController::class);
+        Route::resource('pages', PageController::class);
         Route::group(['prefix' => 'profile'], function () {
             Route::get('change', [ProfileController::class, 'index'])->name('index');
             Route::post('change', [ProfileController::class, 'changePassword'])->name('changePassword');

@@ -20,7 +20,9 @@ class DatabaseSeeder extends Seeder
             CreateRoleHasPermissionsSeeder::class,
             TemplateSeeder::class,
             CreateBasicTemplate::class,
-            CreateExamplePostSeeder::class
+            CreateExamplePostSeeder::class,
+            CreatePagesSeeder::class,
+            CreateMenuSeeder::class
         ]);
     }
 }

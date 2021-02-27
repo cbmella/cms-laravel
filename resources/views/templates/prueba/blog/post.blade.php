@@ -5,7 +5,9 @@
         <div class="row">
             <div class="col-12">
                 <div class="jumbotron">
-                     {!! $page->content !!}
+                    {{ $post->title }}
+                    <hr>
+                    {{ $post->excerpt }}
                 </div>
             </div>
         </div>
